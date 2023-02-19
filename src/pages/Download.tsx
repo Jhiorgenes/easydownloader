@@ -7,9 +7,7 @@ import { ChangeEvent, useContext, useEffect, useState } from 'react'
 import { ThemeContext } from '../context/ThemeContext'
 import { useParams } from 'react-router-dom'
 import { Link } from 'phosphor-react'
-import axios from 'axios'
-
-const baseUrl = 'https://api-easytik.vercel.app'
+import { api } from '../lib/axios'
 
 export const Download = () => {
   const [url, setUrl] = useState('')
@@ -20,7 +18,7 @@ export const Download = () => {
 
   async function downloadFile(link: string, filename?: string) {
     if (social === 'tiktok' || social === 'twitter') {
-      const response = await axios.get(link, {
+      const response = await api.get(link, {
         responseType: 'blob',
       })
       const a = document.createElement('a')
@@ -49,8 +47,8 @@ export const Download = () => {
         return
       }
 
-      const response = await axios.post(
-        `${baseUrl}/${social}`,
+      const response = await api.post(
+        `/${social}`,
         { url: enteredUrl },
         {
           headers: { 'Content-Type': 'application/json' },
@@ -129,7 +127,7 @@ export const Download = () => {
           </div>
           <button
             disabled={loading}
-            className="cursor-pointer bg-green-600 px-2 h-12 md:h-16 md:px-8 md:text-2xl rounded text-white-50 font-bold hover:bg-green-500 transition-all disabled:bg-gray-800"
+            className="cursor-pointer bg-green-600 px-2 h-12 md:h-16 md:px-8 md:text-2xl rounded text-white-50 font-bold hover:bg-green-500 transition-all disabled:opacity-60 disabled:hover:bg-green-600 disabled:cursor-not-allowed"
           >
             {loading ? 'Carregando...' : 'Baixar'}
           </button>

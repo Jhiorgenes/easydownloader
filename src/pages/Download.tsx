@@ -133,6 +133,13 @@ export const Download = () => {
           </button>
         </div>
       </form>
+      <div className="flex items-center justify-center mt-20">
+        <p className="flex items-center gap-2 text-gray-600">
+          {' '}
+          <strong>OBS:</strong>
+          Se não baixar de primeira, cole o link e tente novamente.
+        </p>
+      </div>
     </>
   )
 }

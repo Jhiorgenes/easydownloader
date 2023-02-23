@@ -5,7 +5,6 @@ import tiktokLogo from '../assets/tiktok.png'
 import heroImage from '../assets/hero.png'
 
 import { ThemeContext } from '../context/ThemeContext'
-import { Social } from '../components/Social'
 import { Badge } from '../components/Badge'
 import { useContext } from 'react'
 
@@ -21,8 +20,8 @@ export const Home = () => {
           theme === 'dark' ? 'text-white-50' : 'text-dark'
         }  text-2xl md:text-4xl font-medium text-center`}
       >
-        Baixe videos das redes socias <br />
-        <span className="text-green-600">sem marca d’água</span>{' '}
+        Baixe videos de suas redes socias <br />
+        <span className="text-green-600">fácil e rápido</span>{' '}
       </h2>
 
       <div className="mt-20 flex justify-center">

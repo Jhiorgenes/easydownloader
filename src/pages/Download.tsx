@@ -108,7 +108,14 @@ export const Download = () => {
           } font-semibold text-2xl text-center mt-5 md:mt-10 md:text-4xl`}
         >
           Baixe videos do <span>{social}</span>
-          <br /> <span className="text-green-600">sem marca d’água</span>
+          <br />{' '}
+          <span
+            className={`text-green-600 ${
+              social !== 'tiktok' ? 'hidden' : 'block'
+            }`}
+          >
+            sem marca d’água
+          </span>
         </h1>
       </div>
       <form onSubmit={getVideoInfo}>
@@ -134,7 +141,7 @@ export const Download = () => {
         </div>
       </form>
       <div className="flex items-center justify-center mt-20">
-        <p className="flex items-center gap-2 text-gray-600">
+        <p className="flex items-center gap-2 text-gray-600 flex-wrap">
           {' '}
           <strong>OBS:</strong>
           Se não baixar de primeira, cole o link e tente novamente.

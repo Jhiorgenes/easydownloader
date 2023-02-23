@@ -18,7 +18,7 @@ export const Badge = ({ title, icon, link }: BadgeProps) => {
       <div
         className={`${theme === 'dark' ? 'bg-gray-800' : 'bg-white-100'} ${
           theme === 'dark' ? 'hover:bg-gray-700' : 'hover:brightness-90'
-        } rounded py-4 px-4 flex justify-between items-center cursor-pointer w-full transition-all`}
+        } rounded py-2 md:py-4 px-2 md:px-4 flex justify-between items-center cursor-pointer w-full transition-all`}
       >
         <div className="flex items-center gap-4">
           <Social icon={icon} />
